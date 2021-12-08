@@ -43,7 +43,7 @@ dictionary_location
 
 4. pickle파일 형태로 저장
 ```
-## 우편번호 - 행정동 딕셔너리 형태로 만들기
+## 딕셔너리 형태로 만들기
 def load_pickle(name_pkl):
     with open(name_pkl, 'rb') as f:
         obj = pickle.load(f)
