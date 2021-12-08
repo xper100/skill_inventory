@@ -14,7 +14,32 @@
    
 2. 정규표현식으로 치구/법정동을 나누어 리스트 형식으로 저장
 
+```
+def get_location_name(name_location):
+    split_list = re.split(r'[ ]', name_location) # 띄어쓰기를 기준으로 문자열 나누기
+    자치구 = split_list[1]
+    법정동 = split_list[2]
+    return 법정동, 자치구
+```
+
 3. 위의 리스트를 딕셔너리형태로 묶음
+
+```
+location_column = raw_data['법정동명']
+법정동_list = []
+자치구_list = []
+
+for idx in range(len(location_column)):
+    if len(location_column[idx]) < 11:
+        continue
+    else:     
+        법정동, 자치구 = get_location_name(location_column[idx])
+        법정동_list.append(법정동)
+        자치구_list.append(자치구)
+
+dictionary_location = dict(zip(법정동_list,자치구_list))
+dictionary_location
+```
 
 4. pickle파일 형태로 저장
 ```
