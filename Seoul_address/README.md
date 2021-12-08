@@ -50,7 +50,9 @@ def load_pickle(name_pkl):
     return obj
 # 예시
 data = load_pickle('경로/data.pickle')
-## pickle 저장 코드 (dict1 객체 저장)
+
+
+## pickle 저장방식
 def save_pickle(name_pkl, obj):
     with open(name_pkl, 'wb') as f:
         pickle.dump(obj, f, pickle.HIGHEST_PROTOCOL)
