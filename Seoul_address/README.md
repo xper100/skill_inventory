@@ -17,3 +17,18 @@
 3. 위의 리스트를 딕셔너리형태로 묶음
 
 4. pickle파일 형태로 저장
+```
+## 우편번호 - 행정동 딕셔너리 형태로 만들기
+def load_pickle(name_pkl):
+    with open(name_pkl, 'rb') as f:
+        obj = pickle.load(f)
+    return obj
+# 예시
+data = load_pickle('경로/data.pickle')
+## pickle 저장 코드 (dict1 객체 저장)
+def save_pickle(name_pkl, obj):
+    with open(name_pkl, 'wb') as f:
+        pickle.dump(obj, f, pickle.HIGHEST_PROTOCOL)
+# 예시
+save_pickle('경로.pickle', data)
+```
